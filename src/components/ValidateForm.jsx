@@ -50,7 +50,7 @@ Error Message: Password must contain atleast 6 letters */
     // password
     if(!values.password) {
         errors.password = "All fields are mandatory";
-    } else if(!values.password.length < 6) {
+    }else if(values.password.length < 7) {
         errors.password = "Password must contain atleast 6 letters";
     }
 

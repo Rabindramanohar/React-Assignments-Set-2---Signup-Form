@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 
 
-function useForm(validate) {
+function useForm(callback, validate) {
     const [values, setValues] = useState({
         name: '',
         email: '',
@@ -11,6 +11,7 @@ function useForm(validate) {
     });
 
     const [errors, setError] =useState({});
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
 
     // const {name, value, type, checked} = event.target
@@ -25,7 +26,14 @@ function useForm(validate) {
         console.log("inside onSubmit");
         event.preventDefault();
         setError(validate(values));
+        setIsSubmitting(true);
     }
+
+    useEffect(() => {
+        if(Object.keys(errors).length === 0 && isSubmitting) {
+            callback();
+        }
+    }, [errors])
 
     return {handleChange, values, handleSubmit, errors};
 }
