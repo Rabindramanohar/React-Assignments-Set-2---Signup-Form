@@ -25,7 +25,7 @@ const SignUpForm = (props) => {
           name= "name" 
           value = {values.name}
           onChange = {handleChange} 
-          data-testid = "name" 
+          data-testid = 'name'
         /> {errors.name && <p style = {{color: "red"}}>{errors.name}</p>}
         <br />
         <label>Email: </label>
@@ -34,7 +34,7 @@ const SignUpForm = (props) => {
           name= "email" 
           value = {values.email}
           onChange = {handleChange}
-          data-testid = "email" 
+          data-testid = 'email' 
         /> {errors.email && <p style = {{color: "red"}}>{errors.email}</p>}
         <br />
         <label>Gender: </label>
@@ -44,7 +44,7 @@ const SignUpForm = (props) => {
           value = "male"
           onChange = {handleChange} 
           checked = {values.gender === "male"}
-          data-testid = "gender" 
+          data-testid = 'gender' 
         />Male
         {errors.gender && <p style = {{color: "red"}}>{errors.gender}</p>}
         <input 
@@ -53,7 +53,7 @@ const SignUpForm = (props) => {
           value = "female"
           onChange = {handleChange} 
           checked = {values.gender === "female"}
-          data-testid = "gender" 
+          data-testid = 'gender' 
         />Female
         {errors.gender && <p style = {{color: "red"}}>{errors.gender}</p>}
         <input 
@@ -62,7 +62,7 @@ const SignUpForm = (props) => {
           value = "other"
           onChange = {handleChange} 
           checked = {values.gender === "other"}
-          data-testid = "gender" 
+          data-testid = 'gender' 
         />Others
         {errors.gender && <p style = {{color: "red"}}>{errors.gender}</p>}
         <br />
@@ -72,7 +72,7 @@ const SignUpForm = (props) => {
           name= "phone" 
           value = {values.phone}
           onChange = {handleChange} 
-          data-testid = "phoneNumber" 
+          data-testid = 'phoneNumber' 
         /> {errors.phone && <p style = {{color: "red"}}>{errors.phone}</p>}
         <br />
         <label>Password: </label>
@@ -81,7 +81,7 @@ const SignUpForm = (props) => {
           name= "password" 
           value = {values.password}
           onChange = {handleChange} 
-          data-testid = "password" 
+          data-testid = 'password' 
         /> {errors.password && <p style = {{color: "red"}}>{errors.password}</p>}
         <br />
         <button data-testid = 'submit'>Submit</button>
