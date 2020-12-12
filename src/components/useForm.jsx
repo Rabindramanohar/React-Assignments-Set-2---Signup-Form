@@ -23,15 +23,15 @@ function useForm(callback, validate) {
     }
 
     const handleSubmit = (event) => {
-        console.log("inside onSubmit");
         event.preventDefault();
         setError(validate(values));
         setIsSubmitting(true);
+        console.log(values.email);
     }
 
     useEffect(() => {
         if(Object.keys(errors).length === 0 && isSubmitting) {
-            callback();
+            callback()
         }
     }, [errors])
 

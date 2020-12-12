@@ -3,9 +3,10 @@ import '../styles/App.css';
 import useForm from './useForm';
 import validate from './ValidateForm'
 
-const SignUpForm = ({submitForm}) => {
+const SignUpForm = (props) => {
 
-  const {handleChange, values, handleSubmit, errors} = useForm(submitForm, validate);
+  const {handleChange, values, handleSubmit, errors} = useForm(props.submitForm, validate);
+  const {emailProfile} = props.emailProfile;
 
 /* Form must have the following Input Fields with given attributes:
 1) Name | data-testid = 'name'
@@ -32,7 +33,7 @@ const SignUpForm = ({submitForm}) => {
           type="email" 
           name= "email" 
           value = {values.email}
-          onChange = {handleChange} 
+          onChange = {handleChange}
           data-testid = "email" 
         /> {errors.email && <p style = {{color: "red"}}>{errors.email}</p>}
         <br />
@@ -40,7 +41,7 @@ const SignUpForm = ({submitForm}) => {
         <input 
           type="radio" 
           name= "gender" 
-          value = {values.gender}
+          value = "male"
           onChange = {handleChange} 
           checked = {values.gender === "male"}
           data-testid = "gender" 
@@ -49,7 +50,7 @@ const SignUpForm = ({submitForm}) => {
         <input 
           type="radio" 
           name= "gender" 
-          value = {values.gender}
+          value = "female"
           onChange = {handleChange} 
           checked = {values.gender === "female"}
           data-testid = "gender" 
@@ -58,7 +59,7 @@ const SignUpForm = ({submitForm}) => {
         <input 
           type="radio" 
           name= "gender" 
-          value = {values.gender}
+          value = "other"
           onChange = {handleChange} 
           checked = {values.gender === "other"}
           data-testid = "gender" 
