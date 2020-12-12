@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 
 
-function useForm(callback, validate) {
+function useForm(callback, /* emailProfile ,*/ validate) {
     const [values, setValues] = useState({
         name: '',
         email: '',
@@ -26,12 +26,13 @@ function useForm(callback, validate) {
         event.preventDefault();
         setError(validate(values));
         setIsSubmitting(true);
-        console.log(values.email);
+        console.log(values.email.split('@', 1)[0]);
     }
 
     useEffect(() => {
         if(Object.keys(errors).length === 0 && isSubmitting) {
-            callback()
+            /* emailProfile(values.email.split('@', 1)[0]); */
+            callback(values.email.split('@', 1)[0]);
         }
     }, [errors])
 

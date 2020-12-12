@@ -5,8 +5,7 @@ import validate from './ValidateForm'
 
 const SignUpForm = (props) => {
 
-  const {handleChange, values, handleSubmit, errors} = useForm(props.submitForm, validate);
-  const {emailProfile} = props.emailProfile;
+  const {handleChange, values, handleSubmit, errors} = useForm(props.submitForm, /* props.emailProfile, */ validate);
 
 /* Form must have the following Input Fields with given attributes:
 1) Name | data-testid = 'name'
@@ -18,6 +17,7 @@ const SignUpForm = (props) => {
 
   return (
     <div id="main">
+    
       <form onSubmit = {handleSubmit}>
         <label>Name: </label>
         <input 
