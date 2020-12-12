@@ -8,10 +8,14 @@ function Form() {
 
     const [isSubmitted, setIsSubmitted] = useState(false);
     /* const [emailValue, setEmailValue] = useState(""); */
-    let username = "";
+    const [username, setUsername] = useState("");
+    // let username = "";
+
+    console.log("outside: "+username);
 
     function submitForm(item) {
-        username = item
+        // username = item
+        setUsername(item);
         console.log("inside submitForm: " +username);
         setIsSubmitted(true);
     }
