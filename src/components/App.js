@@ -11,7 +11,6 @@ const App = () => {
     message: ""
   });
   function handleChange(el) {
-    // console.log(el.target);
     let name = el.target.name;
     let value = el.target.value;
 
@@ -24,9 +23,6 @@ const App = () => {
   }
 
   function handleClick(el) {
-    // el.preventDefault();
-    //console.log(inputs);
-    console.log("check");
 
     let name = inputs.name.trim();
     let email = inputs.email.trim();
